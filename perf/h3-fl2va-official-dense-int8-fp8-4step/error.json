@@ -1,0 +1,14 @@
+{
+  "reference": "perf/h3-fl2va-official-dense-bf16-4step/latents.npz",
+  "video_latent_rrmse": 0.29807681457730584,
+  "video_latent_cosine": 0.955502254923529,
+  "video_latent_max_abs": 4.975419282913208,
+  "video_latent_nonfinite": 0,
+  "audio_latent_rrmse": 0.14059749113950273,
+  "audio_latent_cosine": 0.9901350730913113,
+  "audio_latent_max_abs": 0.7852246016263962,
+  "audio_latent_nonfinite": 0,
+  "video_psnr_db": 20.55854585793158,
+  "video_ssim": 0.7684650542214513,
+  "video_quality_frames": 192
+}

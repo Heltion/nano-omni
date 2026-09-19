@@ -1,0 +1,70 @@
+{
+  "status": "complete",
+  "output": "nano.mp4",
+  "workload": {
+    "pipeline": "h3_fl2va",
+    "mode": "fl2va",
+    "width": 1344,
+    "height": 768,
+    "requested_frames": 192,
+    "frames": 192,
+    "video_latent_frames": 57,
+    "audio_latent_frames": 320,
+    "steps": 4
+  },
+  "warmup": 0,
+  "repetitions": 1,
+  "latency_seconds": [
+    313.526663000026
+  ],
+  "mean_seconds": 313.526663000026,
+  "min_seconds": 313.526663000026,
+  "max_seconds": 313.526663000026,
+  "tops": {
+    "BF16BF16F32": 473337404260352,
+    "F16F16F32": 2985873405247488,
+    "F4F4F32": 21464853386854400,
+    "F8F8F16": 107354419200,
+    "I8I8I32": 9408699832627200,
+    "TF32TF32F32": 480452280320
+  },
+  "memory": {
+    "limit_bytes": 25769803776,
+    "membership_backend": "windows_job",
+    "peak_bytes": 8055566336,
+    "trims": 0,
+    "exceeded": false,
+    "monitor_error": null
+  },
+  "environment": {
+    "python": "3.12.12",
+    "torch": "2.14.0+cu130",
+    "torch_cuda": "13.0",
+    "tilelang": "0.1.14",
+    "gpu": "NVIDIA GeForce RTX 5060 Ti",
+    "compute_capability": [
+      12,
+      0
+    ],
+    "execution_backend": "nvrtc"
+  },
+  "hardware": {
+    "gpu": "NVIDIA GeForce RTX 5060 Ti",
+    "dense_tops": {
+      "F4F4F32": 379.5,
+      "F8F8F32": 94.875,
+      "F16F16F32": 47.4375,
+      "BF16BF16F32": 47.4375,
+      "TF32TF32F32": 23.71875,
+      "I8I8I32": 189.75,
+      "F8F8F16": 189.75
+    },
+    "assumptions": "Nominal dense rates inferred from the advertised 759 sparse FP4 TOPS and RTX Blackwell precision ratios. The final component of each MMA type names its accumulator. These are theoretical boost-clock rates, not measured sustained throughput. No structured sparsity is used. F8F8F16 identifies FP8 PV and has twice the dense rate of F8F8F32. FP32 online summation outside MMA does not change that instruction rate.",
+    "sources": [
+      "https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5060-family/",
+      "https://images.nvidia.com/aem-dam/Solutions/geforce/blackwell/nvidia-rtx-blackwell-gpu-architecture.pdf"
+    ]
+  },
+  "tensor_seconds": 179.08785632014502,
+  "tensor_percent": 57.12045495796642
+}

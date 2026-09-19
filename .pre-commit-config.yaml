@@ -1,0 +1,39 @@
+repos:
+  - repo: https://github.com/streetsidesoftware/cspell-cli
+    rev: v10.0.1
+    hooks:
+      - id: cspell
+        name: Check spelling
+
+  - repo: local
+    hooks:
+      - id: readme
+        name: Generate README
+        entry: uv run python hooks/readme.py
+        language: system
+        pass_filenames: false
+        always_run: true
+      - id: docs
+        name: Verify documentation
+        entry: uv run python hooks/docs.py
+        language: system
+        pass_filenames: false
+        always_run: true
+      - id: tuning
+        name: Verify tuning tables
+        entry: uv run python hooks/verify.py
+        language: system
+        pass_filenames: false
+        always_run: true
+      - id: ruff
+        name: Check project source style
+        entry: uv run ruff check src scripts hooks
+        language: system
+        pass_filenames: false
+        files: ^(src|scripts|hooks)/
+      - id: pyrefly
+        name: Check project source types
+        entry: uv run pyrefly check --config pyproject.toml
+        language: system
+        pass_filenames: false
+        files: ^((src/nano_omni|scripts|hooks)/.*\.pyi?$|pyproject\.toml$|uv\.lock$|\.pre-commit-config\.yaml$)

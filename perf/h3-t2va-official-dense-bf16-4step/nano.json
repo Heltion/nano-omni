@@ -1,0 +1,132 @@
+{
+  "status": "complete",
+  "output": "nano.mp4",
+  "run_id": "a460d573-c0ce-4b07-8421-e415346b8ed6",
+  "resolved_config": {
+    "pipeline": "h3_fl2va",
+    "prompt": null,
+    "prompt_file": "perf/h3-t2va-official-dense-bf16-4step/prompt.txt",
+    "expected_tokens": 537,
+    "width": 1344,
+    "height": 768,
+    "seconds": 10.0,
+    "steps": 4,
+    "seed": 0,
+    "lora": "turbo_4step",
+    "lora_strength": 1.0,
+    "video_shift": null,
+    "audio_shift": null,
+    "attention": "dense",
+    "attention_precision": "bf16",
+    "mlp_chunk_tokens": 4096,
+    "working_set_gib": 24,
+    "pinned_gib": 4,
+    "maximum_gpu_temperature_celsius": 35,
+    "synchronization": {
+      "host_to_copy": "value32",
+      "copy_to_host": "event_sync",
+      "copy_to_compute": "value32",
+      "compute_to_copy": "event"
+    },
+    "hardware": "perf/hardware.json",
+    "workspace_gib": 11.0,
+    "first_frame": null,
+    "last_frame": null,
+    "reference_video": null,
+    "reference_audio": null,
+    "latent_output": null,
+    "latent_reference": null,
+    "quality_reference": null,
+    "output": "perf/h3-t2va-official-dense-bf16-4step/nano.mp4"
+  },
+  "workload": {
+    "pipeline": "h3_fl2va",
+    "mode": "t2va",
+    "width": 1344,
+    "height": 768,
+    "requested_frames": 240,
+    "frames": 243,
+    "video_latent_frames": 72,
+    "audio_latent_frames": 405,
+    "steps": 4,
+    "seed": 0,
+    "lora": "turbo_4step",
+    "lora_strength": 1.0,
+    "video_shift": 12.0,
+    "audio_shift": 3.0
+  },
+  "warmup": 0,
+  "repetitions": 1,
+  "latency_seconds": [
+    910.981240699999
+  ],
+  "mean_seconds": 910.981240699999,
+  "median_seconds": 910.981240699999,
+  "min_seconds": 910.981240699999,
+  "max_seconds": 910.981240699999,
+  "range_seconds": 0.0,
+  "sample_stdev_seconds": null,
+  "tops": {
+    "BF16BF16F32": 31893566009278464,
+    "F16F16F32": 3785911321952256,
+    "F4F4F32": 31205621760000,
+    "F8F8F16": 8268115968,
+    "I8I8I32": 11394549164371968,
+    "TF32TF32F32": 601634635776
+  },
+  "memory": {
+    "limit_bytes": 25769803776,
+    "membership_backend": "windows_job",
+    "peak_bytes": 7940661248,
+    "trims": 0,
+    "exceeded": false,
+    "monitor_error": null
+  },
+  "memory_samples": [
+    {
+      "limit_bytes": 25769803776,
+      "membership_backend": "windows_job",
+      "peak_bytes": 7940661248,
+      "trims": 0,
+      "exceeded": false,
+      "monitor_error": null
+    }
+  ],
+  "environment": {
+    "python": "3.12.12",
+    "torch": "2.14.0+cu130",
+    "torch_cuda": "13.0",
+    "tilelang": "0.1.14",
+    "gpu": "NVIDIA GeForce RTX 5060 Ti",
+    "compute_capability": [
+      12,
+      0
+    ],
+    "execution_backend": "nvrtc"
+  },
+  "measurement": {
+    "timing_boundary": "parent wall time from child launch through child exit",
+    "process": "fresh child per sample",
+    "cache_state": "uncontrolled existing OS, CUDA, and TileLang caches",
+    "missing_assets": "downloaded inside the timed child"
+  },
+  "hardware": {
+    "gpu": "NVIDIA GeForce RTX 5060 Ti",
+    "dense_tops": {
+      "F4F4F32": 379.5,
+      "F8F8F32": 94.875,
+      "F16F16F32": 47.4375,
+      "BF16BF16F32": 47.4375,
+      "TF32TF32F32": 23.71875,
+      "I8I8I32": 189.75,
+      "F8F8F16": 189.75
+    },
+    "assumptions": "Nominal dense rates inferred from the advertised 759 sparse FP4 TOPS and RTX Blackwell precision ratios. The final component of each MMA type names its accumulator. These are theoretical boost-clock rates, not measured sustained throughput. No structured sparsity is used. F8F8F16 identifies FP8 PV and has twice the dense rate of F8F8F32. FP32 online summation outside MMA does not change that instruction rate.",
+    "sources": [
+      "https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5060-family/",
+      "https://images.nvidia.com/aem-dam/Solutions/geforce/blackwell/nvidia-rtx-blackwell-gpu-architecture.pdf"
+    ]
+  },
+  "tensor_seconds": 812.2945066950041,
+  "tensor_percent": 89.16698504909235
+}

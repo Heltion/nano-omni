@@ -1,0 +1,98 @@
+[project]
+name = "nano-omni"
+version = "0.1.0"
+description = "TileLang inference pipelines for MiniMax H3"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "av>=17.0.0",
+    "cuda-bindings>=13.3.1",
+    "modelscope>=1.39.1",
+    "numpy>=1.25.0",
+    "pillow>=12.3.0",
+    "psutil>=7.2.2",
+    "pydantic>=2.0",
+    "pyyaml>=6.0.3",
+    "tokenizers>=0.13.3",
+    "tilelang>=0.1.14",
+    "torch>=2.13.0",
+    "typer>=0.27.2",
+]
+
+[build-system]
+requires = ["hatchling>=1.29.0"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "typer>=0.27.2",
+    "torch>=2.13.0",
+    "transformers>=4.50.3",
+    "pyrefly>=1.2.0",
+    "python-dotenv>=1.2.3",
+    "pyyaml>=6.0.3",
+    "ruff>=0.16.5",
+    "types-psutil>=7.2.2",
+    "types-pyyaml>=6.0.12",
+]
+
+experiment = [
+    "typer>=0.27.2",
+    "aiohttp>=3.11.8",
+    "alembic>=1.19.1",
+    "blake3>=1.0.9",
+    "comfy-aimdo>=0.5.3",
+    "comfy-angle>=0.1.1",
+    "comfy-kitchen>=0.2.33",
+    "comfyui-embedded-docs>=0.5.11",
+    "comfyui-frontend-package>=1.52.7",
+    "comfyui-workflow-templates>=0.11.59",
+    "einops>=0.8.2",
+    "filelock>=3.32.4",
+    "kornia>=0.7.1",
+    "pydantic-settings>=2.0",
+    "pyopengl>=3.1.8",
+    "requests>=2.34.2",
+    "safetensors>=0.4.2",
+    "scipy>=1.18.1",
+    "sentencepiece>=0.2.2",
+    "simpleeval>=1.0.0",
+    "spandrel>=0.4.2",
+    "sqlalchemy>=2.0.0",
+    "torch>=2.13.0",
+    "torchaudio>=2.11.0",
+    "torchsde>=0.2.6",
+    "torchvision>=0.28.0",
+    "tqdm>=4.70.0",
+    "transformers>=4.50.3",
+    "yarl>=1.18.0",
+    "triton-windows>=3.8.0.post28 ; sys_platform == 'win32'",
+]
+
+[[tool.uv.index]]
+name = "pytorch"
+url = "https://download.pytorch.org/whl/cu130"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch" }
+torchaudio = { index = "pytorch" }
+torchvision = { index = "pytorch" }
+
+[tool.pyrefly]
+preset = "default"
+project-includes = [
+    "src/nano_omni/core",
+    "src/nano_omni/models",
+    "src/nano_omni/ops",
+    "src/nano_omni/pipelines",
+    "scripts",
+    "hooks",
+]
+# TileLang kernel functions use runtime DSL annotations and source-based autotune keys.
+project-excludes = ["src/nano_omni/kernels/**", "scripts/experiment/**"]
+search-path = ["src", ".", "scripts", "scripts/run", "ComfyUI"]
+
+[tool.pyrefly.errors]
+unnecessary-type-conversion = "error"
+untyped-import = "error"

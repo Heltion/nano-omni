@@ -1,0 +1,8 @@
+{
+  "run_id": "b13998c2-8b06-4c2e-8bd1-ee2bc92541af",
+  "actual": "nano.mp4",
+  "reference": "nano.mp4",
+  "video_psnr_db": "Infinity",
+  "video_ssim": 1.0,
+  "video_quality_frames": 192
+}

@@ -1,0 +1,938 @@
+{
+  "status": "complete",
+  "output": "nano.mp4",
+  "run_id": "aae77367-4f3c-453d-b442-a36bda573317",
+  "resolved_config": {
+    "pipeline": "h3_fl2va",
+    "prompt": null,
+    "prompt_file": "perf\\h3-fl2va-official-sol-nvfp4-4step\\prompt.txt",
+    "expected_tokens": null,
+    "width": 1344,
+    "height": 768,
+    "seconds": 8.0,
+    "steps": 4,
+    "seed": 0,
+    "lora": "turbo_4step",
+    "lora_strength": 1.0,
+    "video_shift": null,
+    "audio_shift": null,
+    "attention": "sol",
+    "attention_precision": "nvfp4",
+    "mlp_chunk_tokens": 4096,
+    "working_set_gib": 24,
+    "pinned_gib": 4,
+    "maximum_gpu_temperature_celsius": null,
+    "synchronization": {
+      "host_to_copy": "value32",
+      "copy_to_host": "event_sync",
+      "copy_to_compute": "value32",
+      "compute_to_copy": "event"
+    },
+    "hardware": "perf\\hardware.json",
+    "workspace_gib": 10.9,
+    "first_frame": "perf\\h3-fl2va-official-sol-nvfp4-4step\\reference0.png",
+    "last_frame": null,
+    "reference_video": null,
+    "reference_audio": null,
+    "latent_output": null,
+    "latent_reference": null,
+    "quality_reference": "perf\\h3-fl2va-official-dense-bf16-4step\\nano.mp4",
+    "output": "perf\\h3-fl2va-official-sol-nvfp4-4step\\nano.mp4"
+  },
+  "measurement": {
+    "timing_boundary": "NSys capture around the complete child process",
+    "process": "fresh profiled child",
+    "cache_state": "uncontrolled existing OS, CUDA, and TileLang caches",
+    "missing_assets": "downloaded inside the timed child"
+  },
+  "warmup": 0,
+  "repetitions": 1,
+  "latency_seconds": 280.67295969999395,
+  "returncode": 0,
+  "artifacts": {
+    "log": "nano-nsys.log",
+    "report": "nano-nsys.nsys-rep",
+    "sqlite": "nano-nsys.sqlite"
+  },
+  "environment": null,
+  "workload": {
+    "pipeline": "h3_fl2va",
+    "mode": "fl2va",
+    "width": 1344,
+    "height": 768,
+    "requested_frames": 192,
+    "frames": 192,
+    "video_latent_frames": 57,
+    "audio_latent_frames": 320,
+    "steps": 4,
+    "seed": 0,
+    "lora": "turbo_4step",
+    "lora_strength": 1.0,
+    "video_shift": 12.0,
+    "audio_shift": 3.0
+  },
+  "kernel_seconds": 245.731060675,
+  "kernel_percent": 88.90800638052305,
+  "gpu_seconds": 249.820715637,
+  "gpu_percent": 90.38768529639493,
+  "profile": {
+    "sqlite": "nano-nsys.sqlite",
+    "definition": "only CUDA kernel interval union is non-bubble",
+    "transfers": {
+      "union_seconds": 7.845793062,
+      "overlapping_kernel_seconds": 3.899375965,
+      "without_kernel_seconds": 3.946417097,
+      "bubble_without_transfer_seconds": 26.710522228,
+      "breakdown": [
+        {
+          "kind": "H2D",
+          "source": "pinned",
+          "destination": "device",
+          "count": 8396,
+          "bytes": 97943039944,
+          "seconds": 7.83923955,
+          "without_kernel_seconds": 3.939863585,
+          "gigabytes_per_second": 12.493946551741743
+        },
+        {
+          "kind": "H2D",
+          "source": "unknown",
+          "destination": "device",
+          "count": 14,
+          "bytes": 47497780,
+          "seconds": 0.005555226,
+          "without_kernel_seconds": 0.005555226,
+          "gigabytes_per_second": 8.55010759238238
+        },
+        {
+          "kind": "D2D",
+          "source": "device",
+          "destination": "device",
+          "count": 31,
+          "bytes": 245327928,
+          "seconds": 0.000852529,
+          "without_kernel_seconds": 0.000852529,
+          "gigabytes_per_second": 287.76490653103883
+        },
+        {
+          "kind": "D2H",
+          "source": "device",
+          "destination": "unknown",
+          "count": 1,
+          "bytes": 2048000,
+          "seconds": 0.000145821,
+          "without_kernel_seconds": 0.000145821,
+          "gigabytes_per_second": 14.04461634469658
+        }
+      ],
+      "longest": [
+        {
+          "kind": "H2D",
+          "source": "pinned",
+          "destination": "device",
+          "stream": 14,
+          "start_seconds": 11.464379285,
+          "seconds": 0.06141117,
+          "bytes": 777912320,
+          "gigabytes_per_second": 12.667277304763937
+        },
+        {
+          "kind": "H2D",
+          "source": "pinned",
+          "destination": "device",
+          "stream": 14,
+          "start_seconds": 19.171201326,
+          "seconds": 0.012457602,
+          "bytes": 154140672,
+          "gigabytes_per_second": 12.373221748455281
+        },
+        {
+          "kind": "H2D",
+          "source": "pinned",
+          "destination": "device",
+          "stream": 14,
+          "start_seconds": 19.063509331,
+          "seconds": 0.012417346,
+          "bytes": 154140672,
+          "gigabytes_per_second": 12.41333470131218
+        },
+        {
+          "kind": "H2D",
+          "source": "pinned",
+          "destination": "device",
+          "stream": 14,
+          "start_seconds": 19.118973875,
+          "seconds": 0.012367747,
+          "bytes": 154140672,
+          "gigabytes_per_second": 12.463116523971586
+        },
+        {
+          "kind": "H2D",
+          "source": "pinned",
+          "destination": "device",
+          "stream": 14,
+          "start_seconds": 18.828827924,
+          "seconds": 0.012048009,
+          "bytes": 154140672,
+          "gigabytes_per_second": 12.793870920913157
+        },
+        {
+          "kind": "H2D",
+          "source": "pinned",
+          "destination": "device",
+          "stream": 14,
+          "start_seconds": 18.763292327,
+          "seconds": 0.012031625,
+          "bytes": 154140672,
+          "gigabytes_per_second": 12.811292905156202
+        },
+        {
+          "kind": "H2D",
+          "source": "pinned",
+          "destination": "device",
+          "stream": 14,
+          "start_seconds": 18.898536918,
+          "seconds": 0.01198273,
+          "bytes": 154140672,
+          "gigabytes_per_second": 12.863568819459338
+        },
+        {
+          "kind": "H2D",
+          "source": "pinned",
+          "destination": "device",
+          "stream": 14,
+          "start_seconds": 19.413079788,
+          "seconds": 0.00671012,
+          "bytes": 77070336,
+          "gigabytes_per_second": 11.485686694127676
+        },
+        {
+          "kind": "H2D",
+          "source": "pinned",
+          "destination": "device",
+          "stream": 14,
+          "start_seconds": 19.676511081,
+          "seconds": 0.006651785,
+          "bytes": 77070336,
+          "gigabytes_per_second": 11.586414173037763
+        },
+        {
+          "kind": "H2D",
+          "source": "pinned",
+          "destination": "device",
+          "stream": 14,
+          "start_seconds": 20.331335924,
+          "seconds": 0.006630025,
+          "bytes": 77070336,
+          "gigabytes_per_second": 11.624441235138631
+        },
+        {
+          "kind": "H2D",
+          "source": "pinned",
+          "destination": "device",
+          "stream": 14,
+          "start_seconds": 184.42507476,
+          "seconds": 0.006625942,
+          "bytes": 77070336,
+          "gigabytes_per_second": 11.631604381686408
+        },
+        {
+          "kind": "H2D",
+          "source": "pinned",
+          "destination": "device",
+          "stream": 14,
+          "start_seconds": 166.872318482,
+          "seconds": 0.006535034,
+          "bytes": 77070336,
+          "gigabytes_per_second": 11.7934101031456
+        },
+        {
+          "kind": "H2D",
+          "source": "pinned",
+          "destination": "device",
+          "stream": 14,
+          "start_seconds": 166.858201679,
+          "seconds": 0.006528218,
+          "bytes": 77070336,
+          "gigabytes_per_second": 11.80572339955559
+        },
+        {
+          "kind": "H2D",
+          "source": "pinned",
+          "destination": "device",
+          "stream": 14,
+          "start_seconds": 20.176438916,
+          "seconds": 0.006526955,
+          "bytes": 77070336,
+          "gigabytes_per_second": 11.80800786890671
+        },
+        {
+          "kind": "H2D",
+          "source": "pinned",
+          "destination": "device",
+          "stream": 14,
+          "start_seconds": 184.410573872,
+          "seconds": 0.006516664,
+          "bytes": 77070336,
+          "gigabytes_per_second": 11.82665486512731
+        },
+        {
+          "kind": "H2D",
+          "source": "pinned",
+          "destination": "device",
+          "stream": 14,
+          "start_seconds": 20.269070572,
+          "seconds": 0.006504844,
+          "bytes": 77070336,
+          "gigabytes_per_second": 11.848145166894087
+        },
+        {
+          "kind": "H2D",
+          "source": "pinned",
+          "destination": "device",
+          "stream": 14,
+          "start_seconds": 20.475818496,
+          "seconds": 0.006487598,
+          "bytes": 77070336,
+          "gigabytes_per_second": 11.879641124496308
+        },
+        {
+          "kind": "H2D",
+          "source": "pinned",
+          "destination": "device",
+          "stream": 14,
+          "start_seconds": 77.16928719,
+          "seconds": 0.006481925,
+          "bytes": 77070336,
+          "gigabytes_per_second": 11.89003822167026
+        },
+        {
+          "kind": "H2D",
+          "source": "pinned",
+          "destination": "device",
+          "stream": 14,
+          "start_seconds": 175.577657652,
+          "seconds": 0.006477818,
+          "bytes": 77070336,
+          "gigabytes_per_second": 11.897576622251504
+        },
+        {
+          "kind": "H2D",
+          "source": "pinned",
+          "destination": "device",
+          "stream": 14,
+          "start_seconds": 20.450748926,
+          "seconds": 0.00647038,
+          "bytes": 77070336,
+          "gigabytes_per_second": 11.911253434883267
+        }
+      ]
+    },
+    "capture": {
+      "seconds": 276.388,
+      "kernel_union_seconds": 245.731060675,
+      "gpu_union_seconds": 249.820715637,
+      "video_union_seconds": 0.144761192,
+      "gpu_complete": true,
+      "video_api_calls": 193,
+      "ignored_video_ranges": 0,
+      "missing_video_ranges": 0,
+      "gpu_coverage_reason": "complete for captured CUDA/video workload",
+      "bubble_seconds": 30.656939325,
+      "bubble_percent": 11.091993619476968
+    },
+    "kernel_span": {
+      "seconds": 267.636925134,
+      "kernel_union_seconds": 245.731060675,
+      "bubble_seconds": 21.905864459,
+      "bubble_percent": 8.184918597473876
+    },
+    "outside_kernel_span_seconds": 8.751074866,
+    "largest_gaps": [
+      {
+        "seconds": 0.988855878,
+        "start_seconds": 10.323889721,
+        "end_seconds": 11.312745599,
+        "before_kernel": "video_vae_normalize_24_1_48_84_125...",
+        "after_kernel": "qwen_mrope_3_64_1024_256_kerne_126...",
+        "memcpy_seconds": 0.000157342,
+        "memset_seconds": 0.0,
+        "host_cuda_calls": [
+          {
+            "name": "cuKernelSetAttribute",
+            "seconds": 0.050026092
+          },
+          {
+            "name": "cuLibraryLoadFromFile",
+            "seconds": 0.017095311
+          },
+          {
+            "name": "cuLaunchKernelEx",
+            "seconds": 0.0152879
+          },
+          {
+            "name": "cuMemcpyHtoD_v2",
+            "seconds": 0.000709619
+          },
+          {
+            "name": "cuCtxSetCurrent",
+            "seconds": 0.000575416
+          }
+        ]
+      },
+      {
+        "seconds": 0.3683229,
+        "start_seconds": 18.202421988,
+        "end_seconds": 18.570744888,
+        "before_kernel": "matmul_fp4_5120_25600_0_1_0_0__143...",
+        "after_kernel": "res_multistep_96768_256_128_ke_1...",
+        "memcpy_seconds": 0.002602353,
+        "memset_seconds": 0.0,
+        "host_cuda_calls": [
+          {
+            "name": "cuLaunchKernelEx",
+            "seconds": 0.014579472
+          },
+          {
+            "name": "cuMemcpyHtoD_v2",
+            "seconds": 0.002983753
+          },
+          {
+            "name": "cuCtxSetCurrent",
+            "seconds": 0.001326711
+          },
+          {
+            "name": "cuMemHostAlloc",
+            "seconds": 0.000479036
+          },
+          {
+            "name": "cuEventCreate",
+            "seconds": 0.000323177
+          }
+        ]
+      },
+      {
+        "seconds": 0.326414551,
+        "start_seconds": 196.695809401,
+        "end_seconds": 197.022223952,
+        "before_kernel": "res_multistep_20480_256_128_ke_28...",
+        "after_kernel": "channel_affine_24_229824_F32_F_77...",
+        "memcpy_seconds": 0.000159613,
+        "memset_seconds": 0.0,
+        "host_cuda_calls": [
+          {
+            "name": "cuLaunchKernelEx",
+            "seconds": 0.01118278
+          },
+          {
+            "name": "cuMemcpyHtoDAsync_v2",
+            "seconds": 0.009022143
+          },
+          {
+            "name": "cuMemFreeHost",
+            "seconds": 0.000503815
+          },
+          {
+            "name": "cuMemHostAlloc",
+            "seconds": 0.000456111
+          },
+          {
+            "name": "cuStreamWriteValue32_v2",
+            "seconds": 0.000314137
+          }
+        ]
+      },
+      {
+        "seconds": 0.284612097,
+        "start_seconds": 272.896156954,
+        "end_seconds": 273.180769051,
+        "before_kernel": "video_vae_temporal_nv12_22_1_7_144...",
+        "after_kernel": "Convert_PL2BL",
+        "memcpy_seconds": 0.0,
+        "memset_seconds": 0.0,
+        "host_cuda_calls": [
+          {
+            "name": "cuModuleLoadData",
+            "seconds": 0.008632129
+          },
+          {
+            "name": "cuMemFreeHost",
+            "seconds": 0.000817421
+          },
+          {
+            "name": "cuSurfObjectCreate",
+            "seconds": 0.000350957
+          },
+          {
+            "name": "cuArrayGetPlane",
+            "seconds": 0.000153665
+          },
+          {
+            "name": "cuStreamSynchronize",
+            "seconds": 3.4878e-05
+          }
+        ]
+      },
+      {
+        "seconds": 0.222889316,
+        "start_seconds": 11.312747103,
+        "end_seconds": 11.535636419,
+        "before_kernel": "qwen_mrope_3_64_1024_256_kerne_126...",
+        "after_kernel": "embedding_int8_151936_5120_1_5_127...",
+        "memcpy_seconds": 0.061460033,
+        "memset_seconds": 0.0,
+        "host_cuda_calls": [
+          {
+            "name": "cuLaunchKernelEx",
+            "seconds": 0.060756532
+          },
+          {
+            "name": "cuMemcpyHtoDAsync_v2",
+            "seconds": 0.060745908
+          },
+          {
+            "name": "cuStreamWriteValue32_v2",
+            "seconds": 0.046021269
+          },
+          {
+            "name": "cuLibraryLoadFromFile",
+            "seconds": 0.001733301
+          },
+          {
+            "name": "cuStreamWaitValue32_v2",
+            "seconds": 0.000116961
+          }
+        ]
+      },
+      {
+        "seconds": 0.218413865,
+        "start_seconds": 14.033687623,
+        "end_seconds": 14.252101488,
+        "before_kernel": "quantize_fp4_25600_1_1_32_128__142...",
+        "after_kernel": "matmul_fp4_5120_25600_0_1_0_0__143...",
+        "memcpy_seconds": 0.000664372,
+        "memset_seconds": 0.0,
+        "host_cuda_calls": [
+          {
+            "name": "cuStreamWriteValue32_v2",
+            "seconds": 0.000238862
+          },
+          {
+            "name": "cuStreamWaitValue32_v2",
+            "seconds": 0.000148933
+          },
+          {
+            "name": "cuMemcpyHtoDAsync_v2",
+            "seconds": 0.00012206
+          },
+          {
+            "name": "cuLaunchKernelEx",
+            "seconds": 3.8107e-05
+          }
+        ]
+      },
+      {
+        "seconds": 0.185620208,
+        "start_seconds": 9.960059842,
+        "end_seconds": 10.14568005,
+        "before_kernel": "main_kernel",
+        "after_kernel": "main_kernel",
+        "memcpy_seconds": 0.004491053,
+        "memset_seconds": 0.0,
+        "host_cuda_calls": [
+          {
+            "name": "cuLaunchKernelEx",
+            "seconds": 0.016198752
+          },
+          {
+            "name": "cuMemcpyHtoDAsync_v2",
+            "seconds": 0.015980498
+          },
+          {
+            "name": "cuCtxSetCurrent",
+            "seconds": 0.015951015
+          },
+          {
+            "name": "cuStreamWaitValue32_v2",
+            "seconds": 0.000171553
+          },
+          {
+            "name": "cuStreamWriteValue32_v2",
+            "seconds": 8.4466e-05
+          }
+        ]
+      },
+      {
+        "seconds": 0.173825266,
+        "start_seconds": 13.829176961,
+        "end_seconds": 14.003002227,
+        "before_kernel": "matmul_fp4_25600_5120_0_0_1_0__139...",
+        "after_kernel": "main_kernel",
+        "memcpy_seconds": 0.005203874,
+        "memset_seconds": 0.0,
+        "host_cuda_calls": [
+          {
+            "name": "cuLibraryLoadFromFile",
+            "seconds": 0.000442457
+          },
+          {
+            "name": "cuStreamWriteValue32_v2",
+            "seconds": 0.000140165
+          },
+          {
+            "name": "cuStreamWaitValue32_v2",
+            "seconds": 0.000111048
+          },
+          {
+            "name": "cuLaunchKernelEx",
+            "seconds": 8.9721e-05
+          },
+          {
+            "name": "cuMemcpyHtoDAsync_v2",
+            "seconds": 6.3798e-05
+          }
+        ]
+      },
+      {
+        "seconds": 0.168894338,
+        "start_seconds": 9.732472726,
+        "end_seconds": 9.901367064,
+        "before_kernel": "main_kernel",
+        "after_kernel": "main_kernel",
+        "memcpy_seconds": 0.002037466,
+        "memset_seconds": 0.0,
+        "host_cuda_calls": [
+          {
+            "name": "cuLaunchKernelEx",
+            "seconds": 0.012408007
+          },
+          {
+            "name": "cuStreamWaitValue32_v2",
+            "seconds": 0.000149891
+          },
+          {
+            "name": "cuMemcpyHtoDAsync_v2",
+            "seconds": 6.8869e-05
+          },
+          {
+            "name": "cuStreamWriteValue32_v2",
+            "seconds": 6.29e-05
+          }
+        ]
+      },
+      {
+        "seconds": 0.143693204,
+        "start_seconds": 12.661877191,
+        "end_seconds": 12.805570395,
+        "before_kernel": "matmul_fp4_25600_5120_0_0_1_0__139...",
+        "after_kernel": "main_kernel",
+        "memcpy_seconds": 0.0055303,
+        "memset_seconds": 0.0,
+        "host_cuda_calls": [
+          {
+            "name": "cuLibraryLoadFromFile",
+            "seconds": 0.000402193
+          },
+          {
+            "name": "cuStreamWaitValue32_v2",
+            "seconds": 0.000128095
+          },
+          {
+            "name": "cuStreamWriteValue32_v2",
+            "seconds": 0.000125141
+          },
+          {
+            "name": "cuMemcpyHtoDAsync_v2",
+            "seconds": 0.000105938
+          },
+          {
+            "name": "cuLaunchKernelEx",
+            "seconds": 6.977e-05
+          }
+        ]
+      },
+      {
+        "seconds": 0.125378145,
+        "start_seconds": 9.424628875,
+        "end_seconds": 9.55000702,
+        "before_kernel": "main_kernel",
+        "after_kernel": "main_kernel",
+        "memcpy_seconds": 0.001093676,
+        "memset_seconds": 0.0,
+        "host_cuda_calls": [
+          {
+            "name": "cuStreamWriteValue32_v2",
+            "seconds": 7.3882e-05
+          },
+          {
+            "name": "cuMemcpyHtoDAsync_v2",
+            "seconds": 7.3388e-05
+          },
+          {
+            "name": "cuLaunchKernelEx",
+            "seconds": 6.7458e-05
+          },
+          {
+            "name": "cuStreamWaitValue32_v2",
+            "seconds": 5.094e-05
+          }
+        ]
+      },
+      {
+        "seconds": 0.091743755,
+        "start_seconds": 9.609224461,
+        "end_seconds": 9.700968216,
+        "before_kernel": "main_kernel",
+        "after_kernel": "main_kernel",
+        "memcpy_seconds": 0.0,
+        "memset_seconds": 0.0,
+        "host_cuda_calls": [
+          {
+            "name": "cuLaunchKernelEx",
+            "seconds": 4.0278e-05
+          },
+          {
+            "name": "cuStreamWaitValue32_v2",
+            "seconds": 2.8885e-05
+          }
+        ]
+      },
+      {
+        "seconds": 0.070612303,
+        "start_seconds": 9.159457392,
+        "end_seconds": 9.230069695,
+        "before_kernel": "main_kernel",
+        "after_kernel": "main_kernel",
+        "memcpy_seconds": 0.000178748,
+        "memset_seconds": 0.0,
+        "host_cuda_calls": [
+          {
+            "name": "cuStreamWaitValue32_v2",
+            "seconds": 0.000152687
+          },
+          {
+            "name": "cuMemcpyHtoDAsync_v2",
+            "seconds": 4.7084e-05
+          },
+          {
+            "name": "cuStreamWriteValue32_v2",
+            "seconds": 4.2803e-05
+          },
+          {
+            "name": "cuLaunchKernelEx",
+            "seconds": 2.7724e-05
+          }
+        ]
+      },
+      {
+        "seconds": 0.066055027,
+        "start_seconds": 13.252336601,
+        "end_seconds": 13.318391628,
+        "before_kernel": "matmul_fp4_25600_5120_0_0_1_0__139...",
+        "after_kernel": "main_kernel",
+        "memcpy_seconds": 0.005591227,
+        "memset_seconds": 0.0,
+        "host_cuda_calls": [
+          {
+            "name": "cuLibraryLoadFromFile",
+            "seconds": 0.000406817
+          },
+          {
+            "name": "cuStreamWriteValue32_v2",
+            "seconds": 0.000155898
+          },
+          {
+            "name": "cuStreamWaitValue32_v2",
+            "seconds": 0.00013571
+          },
+          {
+            "name": "cuLaunchKernelEx",
+            "seconds": 0.000119807
+          },
+          {
+            "name": "cuMemcpyHtoDAsync_v2",
+            "seconds": 8.5617e-05
+          }
+        ]
+      },
+      {
+        "seconds": 0.063515465,
+        "start_seconds": 7.237398152,
+        "end_seconds": 7.300913617,
+        "before_kernel": "gelu_17353728_1024_256_kernel",
+        "after_kernel": "matmul_bf16_1152_4304_1_1_0_0__112...",
+        "memcpy_seconds": 0.000809457,
+        "memset_seconds": 0.0,
+        "host_cuda_calls": [
+          {
+            "name": "cuStreamWaitValue32_v2",
+            "seconds": 9.8202e-05
+          },
+          {
+            "name": "cuStreamWriteValue32_v2",
+            "seconds": 6.8734e-05
+          },
+          {
+            "name": "cuLaunchKernelEx",
+            "seconds": 5.531e-05
+          },
+          {
+            "name": "cuMemcpyHtoDAsync_v2",
+            "seconds": 5.1401e-05
+          },
+          {
+            "name": "cuTensorMapEncodeTiled",
+            "seconds": 3.132e-06
+          }
+        ]
+      },
+      {
+        "seconds": 0.059570601,
+        "start_seconds": 13.764631443,
+        "end_seconds": 13.824202044,
+        "before_kernel": "matmul_fp4_25600_5120_0_0_0_1__138...",
+        "after_kernel": "main_kernel",
+        "memcpy_seconds": 0.005346655,
+        "memset_seconds": 0.0,
+        "host_cuda_calls": [
+          {
+            "name": "cuLibraryLoadFromFile",
+            "seconds": 0.000265727
+          },
+          {
+            "name": "cuStreamWriteValue32_v2",
+            "seconds": 0.000108372
+          },
+          {
+            "name": "cuStreamWaitValue32_v2",
+            "seconds": 6.7798e-05
+          },
+          {
+            "name": "cuMemcpyHtoDAsync_v2",
+            "seconds": 3.9551e-05
+          },
+          {
+            "name": "cuLaunchKernelEx",
+            "seconds": 3.5933e-05
+          }
+        ]
+      },
+      {
+        "seconds": 0.055015995,
+        "start_seconds": 12.41046946,
+        "end_seconds": 12.465485455,
+        "before_kernel": "matmul_fp4_8192_5120_0_0_0_0_0_131...",
+        "after_kernel": "main_kernel",
+        "memcpy_seconds": 0.00025158,
+        "memset_seconds": 0.0,
+        "host_cuda_calls": [
+          {
+            "name": "cuStreamWriteValue32_v2",
+            "seconds": 9.7779e-05
+          },
+          {
+            "name": "cuStreamWaitValue32_v2",
+            "seconds": 8.901e-05
+          },
+          {
+            "name": "cuMemcpyHtoDAsync_v2",
+            "seconds": 6.615e-05
+          },
+          {
+            "name": "cuLaunchKernelEx",
+            "seconds": 3.2295e-05
+          }
+        ]
+      },
+      {
+        "seconds": 0.054994843,
+        "start_seconds": 13.191705956,
+        "end_seconds": 13.246700799,
+        "before_kernel": "matmul_fp4_25600_5120_0_0_0_1__138...",
+        "after_kernel": "main_kernel",
+        "memcpy_seconds": 0.005584891,
+        "memset_seconds": 0.0,
+        "host_cuda_calls": [
+          {
+            "name": "cuLibraryLoadFromFile",
+            "seconds": 0.000497708
+          },
+          {
+            "name": "cuStreamWriteValue32_v2",
+            "seconds": 7.9685e-05
+          },
+          {
+            "name": "cuStreamWaitValue32_v2",
+            "seconds": 5.5861e-05
+          },
+          {
+            "name": "cuLaunchKernelEx",
+            "seconds": 4.3433e-05
+          },
+          {
+            "name": "cuMemcpyHtoDAsync_v2",
+            "seconds": 4.112e-05
+          }
+        ]
+      },
+      {
+        "seconds": 0.054389825,
+        "start_seconds": 10.269498296,
+        "end_seconds": 10.323888121,
+        "before_kernel": "main_kernel",
+        "after_kernel": "video_vae_normalize_24_1_48_84_125...",
+        "memcpy_seconds": 0.0,
+        "memset_seconds": 0.0,
+        "host_cuda_calls": [
+          {
+            "name": "cuLaunchKernelEx",
+            "seconds": 0.00986218
+          },
+          {
+            "name": "cuLibraryLoadFromFile",
+            "seconds": 0.000387612
+          },
+          {
+            "name": "cuStreamWaitValue32_v2",
+            "seconds": 0.000111782
+          },
+          {
+            "name": "cuLibraryGetKernel",
+            "seconds": 2.86e-07
+          }
+        ]
+      },
+      {
+        "seconds": 0.053346055,
+        "start_seconds": 19.022685772,
+        "end_seconds": 19.076031827,
+        "before_kernel": "matmul_bf16_14336_128_0_0_0_0__18...",
+        "after_kernel": "matmul_bf16_14336_5376_0_1_0_1_19...",
+        "memcpy_seconds": 0.012442338,
+        "memset_seconds": 0.0,
+        "host_cuda_calls": [
+          {
+            "name": "cuStreamWriteValue32_v2",
+            "seconds": 9.6727e-05
+          },
+          {
+            "name": "cuStreamWaitValue32_v2",
+            "seconds": 8.7396e-05
+          },
+          {
+            "name": "cuLaunchKernelEx",
+            "seconds": 7.3364e-05
+          },
+          {
+            "name": "cuMemcpyHtoDAsync_v2",
+            "seconds": 5.639e-05
+          },
+          {
+            "name": "cuEventRecord",
+            "seconds": 9.242e-06
+          }
+        ]
+      }
+    ]
+  }
+}

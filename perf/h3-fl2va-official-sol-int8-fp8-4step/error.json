@@ -1,0 +1,8 @@
+{
+  "run_id": "8adf12ce-0fed-4b83-9533-4772711c8add",
+  "actual": "nano.mp4",
+  "reference": "nano.mp4",
+  "video_psnr_db": 16.5613695915819,
+  "video_ssim": 0.6283078019817671,
+  "video_quality_frames": 192
+}

@@ -1,0 +1,4 @@
+# Official example manifests authenticate exact asset bytes.
+example/**/request.sh -text
+example/**/request.json -text
+example/**/prompt.txt -text

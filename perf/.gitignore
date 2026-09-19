@@ -1,0 +1,25 @@
+# Published benchmark inputs and results.
+*
+!.gitignore
+!hardware.json
+!h3-fl2va-official-dense-bf16-4step/
+!h3-fl2va-official-dense-int8-fp8-4step/
+!h3-fl2va-official-dense-nvfp4-4step/
+!h3-fl2va-official-sol-bf16-4step/
+!h3-fl2va-official-sol-int8-fp8-4step/
+!h3-fl2va-official-sol-nvfp4-4step/
+!h3-ref2va-0.4mp-dense-bf16-4step/
+!h3-t2va-official-dense-bf16-4step/
+!*/SOURCES.md
+!*/SOURCES.zh.md
+!*/comfy.json
+!*/comfy.mp4
+!*/config.yaml
+!*/error.json
+!*/nano-nsys.json
+!*/nano.json
+!*/nano.mp4
+!*/prompt.txt
+!*/reference0.mp4
+!*/reference0.png
+!*/reference1.mp3
